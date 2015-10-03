@@ -31,37 +31,37 @@ describe UnitConversion do
   # DISTANCE CONVERSIONS #
   ########################
 
-  distance_subject = UnitConversion.new(5280.0)
+  distance_subject = UnitConversion.new(1000)
 
   it '#feet_to_inch' do
-    expect(distance_subject.feet_to_inch).to eq 440.0
+    expect(distance_subject.feet_to_inch.round(2)).to eq 83.33
   end
 
   it '#inch_to_feet' do
-    expect(distance_subject.inch_to_feet).to eq 63360.0
+    expect(distance_subject.inch_to_feet.round(2)).to eq 12000.0
   end
 
   it '#feet_to_yard' do
-    expect(distance_subject.feet_to_yard).to eq 15840
+    expect(distance_subject.feet_to_yard.round(2)).to eq 3000.0
   end
 
   it '#yard_to_feet' do
-    expect(distance_subject.yard_to_feet).to eq 1760.0
+    expect(distance_subject.yard_to_feet.round(2)).to eq 333.33
   end
 
   it '#feet_to_mile' do
-    expect(distance_subject.feet_to_mile).to eq 1
+    expect(distance_subject.feet_to_mile.round(2)).to eq 0.19
   end
 
   it '#mile_to_feet' do
-    expect(distance_subject.mile_to_feet).to eq 27878400.0
+    expect(distance_subject.mile_to_feet.round(2)).to eq 5280000
   end
 
   it '#feet_to_meter' do
-    expect(distance_subject.feet_to_meter).to eq 1609.344
+    expect(distance_subject.feet_to_meter.round(2)).to eq 304.8
   end
 
   it '#meter_to_feet' do
-    expect(distance_subject.meter_to_feet).to eq 17322.83464566929
+    expect(distance_subject.meter_to_feet.round(2)).to eq 3280.84
   end
 end

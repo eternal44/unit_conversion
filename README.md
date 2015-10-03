@@ -23,11 +23,17 @@ Or install it yourself as:
     $ gem install unit_conversion
 
 ## Usage
+Always refer to unit conversion methods without an 's'.
+    Wrong way: inches_to_feet
+    Right way: inch_to_feet
+
+Instructions:
 
     temperate = UnitConversion.new(0)
     temperature.celcius_to_kelvin
 
     => 273.15
+
 ## Units available for conversion
 
 Temperature:
@@ -42,11 +48,9 @@ Distance:
 
 ## Development
 
-TODO:
-* create baseline conversions
-* create distance conversions
-
-* write tests
+I'll be adding more conversions along with a small group I'm working
+with.  Feel free to watch this repo to keep up with what new conversions
+we add.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 

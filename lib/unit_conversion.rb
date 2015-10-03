@@ -5,16 +5,20 @@ class UnitConversion
     @measurement = measurement
   end
 
+  ###########################
+  # TEMPERATURE CONVERSIONS #
+  ###########################
+
   def celcius_to_kelvin
     @measurement + 273.15
   end
 
-  def celcius_to_kelvin
-    @measurement+ 273.15
-  end
-
   def fahrenheit_to_kelvin
     (@measurement + 459.67) * 5 / 9
+  end
+
+  def rankine_to_kelvin
+    @measurement / 1.8
   end
 
   def kelvin_to_celcius
@@ -29,10 +33,6 @@ class UnitConversion
     @measurement * 1.8
   end
 
-  def rankine_to_kelvin
-    @measurement / 1.8
-  end
-
   ########################
   # DISTANCE CONVERSIONS #
   ########################
@@ -42,15 +42,15 @@ class UnitConversion
   end
 
   def inch_to_feet
-    @measurement * 12
+    @measurement * 12.0
   end
 
   def feet_to_yard
-    @measurement * 3
+    @measurement * 3.0
   end
 
   def yard_to_feet
-    @measurement / 3
+    @measurement / 3.0
   end
 
   def feet_to_mile
@@ -68,5 +68,4 @@ class UnitConversion
   def meter_to_feet
     @measurement / 0.3048
   end
-
 end
