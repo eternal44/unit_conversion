@@ -23,7 +23,8 @@ Or install it yourself as:
     $ gem install unit_conversion
 
 ## Usage
-Always refer to unit conversion methods without an 's'.
+Always refer to unit conversion methods without an 's':
+
     Wrong way: inches_to_feet
     Right way: inch_to_feet
 
