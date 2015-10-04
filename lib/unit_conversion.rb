@@ -1,13 +1,13 @@
-require "unit_conversion/version"
+require_relative "unit_conversion/version"
 
 class UnitConversion
   def initialize(measurement)
     @measurement = measurement
   end
-
-  ###########################
-  # TEMPERATURE CONVERSIONS #
-  ###########################
+  #
+  ##########################
+  # TEMPERATURE CONVERSION #
+  ##########################
 
   def celcius_to_kelvin
     @measurement + 273.15
@@ -85,11 +85,29 @@ class UnitConversion
     @measurement * 5280.0
   end
 
+  def meter_to_feet
+    @measurement / 0.3048
+  end
+
   def feet_to_meter
     @measurement * 0.3048
   end
 
-  def meter_to_feet
-    @measurement / 0.3048
+  #
+  def inch_to_meter
+    @measurement * 0.0254
   end
+
+  def yard_to_meter
+    @measurement * 0.9144
+  end
+
+  def mile_to_meter
+    @measurement * 1609.34
+  end
+
+  def yard_to_centimeter
+    self.yard_to_meter * 100
+  end
+
 end

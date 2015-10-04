@@ -49,9 +49,7 @@ Distance:
 
 ## Development
 
-I'll be adding more conversions along with a small group I'm working
-with.  Feel free to watch this repo to keep up with what new conversions
-we add.
+We'll be adding more conversions focusing on temperature conversions first.  Feel free to email me suggestions if you want a certain conversion that isn't included in this gem.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
