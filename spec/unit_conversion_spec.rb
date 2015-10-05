@@ -63,19 +63,19 @@ describe UnitConversion do
   distance_subject = UnitConversion.new(1000)
 
   it '#feet_to_inch' do
-    expect(distance_subject.feet_to_inch.round(2)).to eq 83.33
+    expect(distance_subject.feet_to_inch.round(2)).to eq 12000.0
   end
 
   it '#inch_to_feet' do
-    expect(distance_subject.inch_to_feet.round(2)).to eq 12000.0
+    expect(distance_subject.inch_to_feet.round(2)).to eq 83.33
   end
 
   it '#feet_to_yard' do
-    expect(distance_subject.feet_to_yard.round(2)).to eq 3000.0
+    expect(distance_subject.feet_to_yard.round(2)).to eq 333.33
   end
 
   it '#yard_to_feet' do
-    expect(distance_subject.yard_to_feet.round(2)).to eq 333.33
+    expect(distance_subject.yard_to_feet.round(2)).to eq 3000.0
   end
 
   it '#feet_to_mile' do
@@ -94,21 +94,20 @@ describe UnitConversion do
     expect(distance_subject.meter_to_feet.round(2)).to eq 3280.84
   end
 
-  # inch to m
   it '#inch_to_meter' do
     expect(distance_subject.inch_to_meter.round(2)).to eq 25.4
+  end
+
+  it '#meter_to_inch' do
+    expect(distance_subject.meter_to_inch.round(2)).to eq 39370.08
   end
 
   it '#yard_to_meter' do
     expect(distance_subject.yard_to_meter.round(2)).to eq 914.4
   end
 
-  it '#mile_to_meter' do
-    expect(distance_subject.mile_to_meter.round(2)).to eq 1609340
-  end
-
-  it '#yard_to_centimeter' do
-    expect(distance_subject.yard_to_centimeter.round(2)).to eq 91440
+  it '#meter_to_yard' do
+    expect(distance_subject.meter_to_yard.round(2)).to eq 1093.61
   end
 
 end

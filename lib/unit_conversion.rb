@@ -62,19 +62,19 @@ class UnitConversion
   ########################
 
   def feet_to_inch
-    @measurement / 12.0
-  end
-
-  def inch_to_feet
     @measurement * 12.0
   end
 
+  def inch_to_feet
+    @measurement / 12.0
+  end
+
   def feet_to_yard
-    @measurement * 3.0
+    @measurement / 3.0
   end
 
   def yard_to_feet
-    @measurement / 3.0
+    @measurement * 3.0
   end
 
   def feet_to_mile
@@ -98,16 +98,15 @@ class UnitConversion
     @measurement * 0.0254
   end
 
+  def meter_to_inch
+    @measurement / 0.0254
+  end
+
   def yard_to_meter
     @measurement * 0.9144
   end
 
-  def mile_to_meter
-    @measurement * 1609.34
+  def meter_to_yard
+    @measurement / 0.9144
   end
-
-  def yard_to_centimeter
-    self.yard_to_meter * 100
-  end
-
 end
