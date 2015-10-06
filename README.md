@@ -23,17 +23,20 @@ Or install it yourself as:
     $ gem install unit_conversion
 
 ## Usage
-Always refer to unit conversion methods without an 's':
-
-    Wrong way: inches_to_feet
-    Right way: inch_to_feet
-
-Instructions:
-
-    temperate = UnitConversion.new(0)
-    temperature.celcius_to_kelvin
+If you want to convert from Celcius to Kelvin:
+    temperate = UnitConversion.new(0, 'celcius')
+    temperature.to_kelvin
 
     => 273.15
+
+Always refer to unit conversion methods without an 's' and in it's
+singular form:
+
+    Wrong way:  to_meters
+    Rgiht way:  to_meter
+
+    Wrong way: to_feet
+    Right way: to_foot
 
 ## Units available for conversion
 
@@ -44,8 +47,10 @@ Temperature:
 - Rankine
 
 Distance:
-- Metric
-- Imperial
+- Meter
+- Inch
+- Foot
+- Yard
 
 ## Development
 
