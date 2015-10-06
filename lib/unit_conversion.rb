@@ -7,7 +7,8 @@ class UnitConversion
   include DistanceConversion
   include TemperatureConversion
 
-  def initialize(measurement)
+  def initialize(measurement, unit)
     @measurement = measurement
+    @unit = unit
   end
 end
