@@ -1,10 +1,9 @@
 # UnitConversion
 
-An updated unit conversion plugin for rails.
+An up-to-date, easy to use unit conversion gem.
 
 ## Dependencies
 Ruby 2.x
-Rails 4.x
 
 ## Installation
 
@@ -24,6 +23,7 @@ Or install it yourself as:
 
 ## Usage
 If you want to convert from Celcius to Kelvin:
+
     temperate = UnitConversion.new(0, 'celcius')
     temperature.to_kelvin
 
@@ -52,9 +52,27 @@ Distance:
 - Foot
 - Yard
 
+Weight:
+- Gram
+- Ounce
+- Pound
+- Short Ton (US ton)
+- Long Ton (British ton)
+
 ## Development
 
-We'll be adding more conversions focusing on temperature conversions first.  Feel free to email me suggestions if you want a certain conversion that isn't included in this gem.
+** Next Version: **
+- more metric conversions for all measurements (ex: centi prefixes)
+
+** Future measurements for conversion: **
+- speed conversions
+- volume
+- area
+- time
+- frequency
+- data transfer rate
+- digital storage
+- energy
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
