@@ -24,19 +24,23 @@ Or install it yourself as:
 ## Usage
 If you want to convert from Celcius to Kelvin:
 
-    temperate = UnitConversion.new(0, 'celcius')
+    celcius = UnitConversion.new(0, 'celcius')
     temperature.to_kelvin
 
     => 273.15
 
-Always refer to unit conversion methods without an 's' and in it's
-singular form:
+Refer to the list below and simply prefix a unit with "to_" to call the
+instance method.  Also, always refer to unit conversion methods without an 
+'s' and in it's singular form:
 
     Wrong way:  to_meters
     Rgiht way:  to_meter
 
     Wrong way: to_feet
     Right way: to_foot
+
+    Wrong way: to_mph
+    Right way: to_miles_per_hour
 
 ## Units available for conversion
 
@@ -59,13 +63,19 @@ Weight:
 - Short Ton (US ton)
 - Long Ton (British ton)
 
+Speed:
+- Mile per hour
+- Kilometer per hour
+- Foot per second
+- Meter per second
+- Knot
+
 ## Development
 
-** Next Version: **
+**Next Version:**
 - more metric conversions for all measurements (ex: centi prefixes)
 
-** Future measurements for conversion: **
-- speed conversions
+**Future measurements for conversion:**
 - volume
 - area
 - time
