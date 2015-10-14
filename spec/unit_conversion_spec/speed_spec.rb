@@ -6,7 +6,6 @@ describe SpeedConversion do
   ###########
 
   # meter per second is the proxy
-# [ ["kph", "mps"], ["kph", "mph"], ["kph", "knot"], , ["mps", "kph"], ["mps", "mph"], ["mps", "knot"], , ["mph", "kph"], ["mph", "mps"], ["mph", "knot"], , ["knot", "kph"], ["knot", "mps"], ["knot", "mph"]]
 
   kph_to_mps = UnitConversion.new(1000, 'kilometer_per_hour')
   it 'kilometer per hour to meter per second' do
@@ -46,5 +45,66 @@ describe SpeedConversion do
   mps = UnitConversion.new(1000, 'meter_per_second')
   it 'meter per second to mile per second' do
     expect(mps.to_mile_per_second.round(2)).to eq 0.62
+  end
+
+
+  mph_to_kps = UnitConversion.new(1000, 'mile_per_hour')
+  it 'mph_to_kps' do
+    expect(mph_to_kps.to_kilometer_per_second.round(2)).to eq 0.45
+  end
+
+  mph_to_kph = UnitConversion.new(1000, 'mile_per_hour')
+  it 'mph_to_kph' do
+    expect(mph_to_kph.to_kilometer_per_hour.round(2)).to eq 1609.34
+  end
+
+  mph_to_knot = UnitConversion.new(1000, 'mile_per_hour')
+  it 'mph_to_knot' do
+    expect(mph_to_knot.to_knot.round(2)).to eq 868.98
+  end
+
+  kps_to_mph = UnitConversion.new(1000, 'kilometer_per_second')
+  it 'kps_to_mph' do
+    expect(kps_to_mph.to_mile_per_hour.round(2)).to eq 2236936.29
+  end
+
+  kps_to_kph = UnitConversion.new(1000, 'kilometer_per_second')
+  it 'kps_to_kph' do
+    expect(kps_to_kph.to_kilometer_per_hour.round(2)).to eq 3600000
+  end
+
+  kps_to_knot = UnitConversion.new(1000, 'kilometer_per_second')
+  it 'kps_to_knot' do
+    expect(kps_to_knot.to_knot.round(2)).to eq 1943844.49
+  end
+
+  kph_to_mph = UnitConversion.new(1000, 'kilometer_per_hour')
+  it 'kph_to_mph' do
+    expect(kph_to_mph.to_mile_per_hour.round(2)).to eq 621.37
+  end
+
+  kph_to_kps = UnitConversion.new(1000, 'kilometer_per_hour')
+  it 'kph_to_kps' do
+    expect(kph_to_kps.to_kilometer_per_second.round(2)).to eq 0.28 # check later
+  end
+
+  kph_to_knot = UnitConversion.new(1000, 'kilometer_per_hour')
+  it 'kph_to_knot' do
+    expect(kph_to_knot.to_knot.round(2)).to eq 539.96
+  end
+
+  knot_to_mph = UnitConversion.new(1000, 'knot')
+  it 'knot_to_mph' do
+    expect(knot_to_mph.to_mile_per_hour.round(2)).to eq 1150.78
+  end
+
+  knot_to_kps = UnitConversion.new(1000, 'knot')
+  it 'knot_to_kps' do
+    expect(knot_to_kps.to_kilometer_per_second.round(2)).to eq 0.51
+  end
+
+  knot_to_kph = UnitConversion.new(1000, 'knot')
+  it 'knot_to_kph' do
+    expect(knot_to_kph.to_kilometer_per_hour.round(2)).to eq 1852
   end
 end
