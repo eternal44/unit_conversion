@@ -1,0 +1,2 @@
+module Speed
+end

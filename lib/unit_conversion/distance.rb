@@ -1,0 +1,2 @@
+module Distance
+end
