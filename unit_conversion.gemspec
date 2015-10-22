@@ -20,5 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "guard", "~> 2.13"
+  spec.add_development_dependency 'guard-minitest', '~> 2.4', '>= 2.4.4'
+  spec.add_development_dependency 'terminal-notifier-guard', '~> 1.6', '>= 1.6.4'
 end
