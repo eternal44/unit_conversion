@@ -1,9 +1,9 @@
-module Convertor
+module DistanceConvertor
 
   class Distance
     attr_reader :value
 
-    def setup(value, unit)
+    def initialize(value, unit)
       @value = value
       send("from_#{unit}")
       self

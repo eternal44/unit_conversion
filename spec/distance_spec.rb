@@ -1,16 +1,15 @@
 require 'spec_helper'
 
-include Convertor
+include DistanceConvertor
 
-describe Convertor::Distance do
+describe DistanceConvertor::Distance do
   before do
-    @inch_distance = Distance.new.setup(1000, 'inch')
-    @meter_distance = Distance.new.setup(1000, 'meter')
-    @foot_distance = Distance.new.setup(1000, 'foot')
-    @yard_distance = Distance.new.setup(1000, 'yard')
+    @inch_distance = Distance.new(1000, 'inch')
+    @meter_distance = Distance.new(1000, 'meter')
+    @foot_distance = Distance.new(1000, 'foot')
+    @yard_distance = Distance.new(1000, 'yard')
   end
 
-  # why don't I need 'to_f' for meter conversions?
   # ["meter", "inch"]
   it 'must be 39370.08 inches for 1000 meters' do
     @meter_distance.to_inch.round(2).must_equal 39370.08
@@ -80,8 +79,6 @@ describe Convertor::Distance do
   it 'must be 1k yard for 1k yard' do
     @yard_distance.to_yard.to_f.round(2).must_equal 1000.00
   end
-
-
 
   it 'must be able to convert to a float' do
     @inch_distance.to_f.must_equal 25.4
