@@ -3,4 +3,4 @@ require 'minitest/autorun'
 require 'unit_conversion'
 require 'minitest/reporters'
 
-Minitest::Reporters.use! Minitest::Reporters::ProgressReporter.new 
+Minitest::Reporters.use! Minitest::Reporters::ProgressReporter.new
