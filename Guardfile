@@ -16,8 +16,8 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard :minitest do
-  watch(%r{^spec/(.*)_spec\.rb$})
-  watch(%r{^lib/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^lib/unit_conversion/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r{^spec/spec_helper\.rb$})         { 'spec' }
+  watch(%r{^test/test_(.+)\.rb$})
+  watch(%r{^lib/(.+)\.rb$}) { |m| "test/#{m[1]}.rb" }
+  watch(%r{^lib/unit_conversion/(.+)\.rb$}) { |m| "test/test_#{m[1]}.rb" }
+  watch(%r{^test/spec_helper\.rb$})         { 'test' }
 end

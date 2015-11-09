@@ -1,43 +1,58 @@
-module TemperatureConversion
-  # Proxy = Kelvin
-  def to_kelvin
-    case @unit
-    when 'celcius'
-      @measurement += 273.15
-    when 'rankine'
-      @measurement /= 1.8
-    when 'fahrenheit'
-      @measurement = (@measurement + 459.67) * 5 / 9
-    end
-  end
+module TemperatureConvertor
 
-  def to_celcius
-    if @unit == 'kelvin'
-      @measurement -= 273.15
-    else
-      self.to_kelvin
-      @unit = 'kelvin'
-      self.to_celcius
-    end
-  end
+  class Temperature
+    attr_reader :value
 
-  def to_fahrenheit
-    if @unit == 'kelvin'
-      @measurement = (@measurement * 9 / 5.0) - 459.67
-    else
-      self.to_kelvin
-      @unit = 'kelvin'
-      self.to_fahrenheit
+    def initialize(value, unit)
+      @value = value
+      send("from_#{unit}")
+      self
     end
-  end
 
-  def to_rankine
-    if @unit == 'kelvin'
-      @measurement *= 1.8
-    else
-      self.to_kelvin
+    def from_kelvin
       @unit = 'kelvin'
-      self.to_rankine
+      self
+    end
+
+    def from_celcius
+      @unit = 'celcius'
+      @value = ->(n) { n + 273.15 }.call(@value)
+    end
+
+    def from_fahrenheit
+      @unit = 'fahrenheit'
+      @value = ->(n) { (n + 459.67) * 5 / 9 }.call(@value)
+    end
+
+    def from_rankin
+      @unit = 'rankin'
+      @value = ->(n) { n / 1.8 }.call(@value)
+
+    end
+
+    def to_kelvin
+      @unit = 'kelvin'
+      @value
+      # self # commenting this line out allows test to pass
+    end
+
+    def to_celcius
+      @unit = 'kelvin'
+      @value = ->(n) { n - 273.15 }.call(@value)
+    end
+
+    def to_fahrenheit
+      @unit = 'kelvin'
+      @value = ->(n) { (n * 9 / 5.0) - 459.67 }.call(@value)
+    end
+
+    def to_rankin
+      @unit = 'rankin'
+      @value = ->(n) { n * 1.8 }.call(@value)
+    end
+
+    def inspect
+      "#{self.class} object, with the current unit of #{@unit} and a value of #@value"
     end
   end
 end
