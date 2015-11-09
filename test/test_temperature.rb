@@ -2,7 +2,7 @@ require 'spec_helper'
 
 include TemperatureConvertor
 
-describe TemperatureConvertor::Distance do
+describe TemperatureConvertor::Temperature do
   before do
     @fahrenheit_temperature = Temperature.new(0, 'fahrenheit')
     @kelvin_temperature = Temperature.new(0, 'kelvin')
