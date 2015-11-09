@@ -10,11 +10,12 @@ module DistanceConvertor
     end
 
     def from_meter
+      @unit = 'meter'
       self
     end
 
     def from_inch
-      @unit = 'meter'
+      @unit = 'inch'
       @value = proc do |n|
         n * 0.0254
       end .call(@value)
@@ -34,12 +35,9 @@ module DistanceConvertor
       end .call(@value)
     end
 
-
-
     def to_meter
       @unit = "meter"
       @value
-      self
     end
 
     def to_inch
@@ -60,6 +58,7 @@ module DistanceConvertor
     def to_s
       [@value, @unit].join(' ')
     end
+
     def to_f
       to_s.to_f
     end
