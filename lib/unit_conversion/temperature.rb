@@ -54,6 +54,18 @@ module TemperatureConvertor
     def inspect
       "#{self.class} object, with the current unit of #{@unit} and a value of #@value"
     end
+
+    def to_s
+      [@value, @unit].join(' ')
+    end
+
+    def to_f
+      to_s.to_f
+    end
+
+    def inspect
+      "#{self.class} object, with the current unit of #{@unit} and a value of #@value"
+    end
   end
 end
 
