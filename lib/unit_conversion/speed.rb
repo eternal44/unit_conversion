@@ -1,4 +1,24 @@
 module SpeedConvertor
+  CONVERSIONS =
+    {
+      from:
+      {
+        kilometers_per_hour:
+        {
+          value:  -> (n) { n * 0.27777778 },
+          unit: 'kilometers per hour'
+        }
+      },
+      to:
+      {
+        kilometers_per_hour:
+        {
+          value: -> (n) { n * 3.6 },
+          unit: 'kilometers per hour'
+        }
+      }
+    }
+
   # Proxy = Meter per Second
 
   class Speed
@@ -11,8 +31,13 @@ module SpeedConvertor
     end
 
     def from_kilometers_per_hour
-      @unit = 'kilometer per hour'
-      @value = ->(n) { n * 0.277778}.call(@value)
+      @unit = CONVERSIONS[:from][:kilometers_per_hour][:unit]
+      @value = CONVERSIONS[:from][:kilometers_per_hour][:value].call(@value)
+    end
+
+    def to_kilometers_per_hour
+      @unit = CONVERSIONS[:to][:kilometers_per_hour][:unit]
+      @value = CONVERSIONS[:to][:kilometers_per_hour][:value].call(@value)
     end
 
     def from_kilometers_per_second
@@ -54,12 +79,6 @@ module SpeedConvertor
       @unit = 'meters per second'
       @value
     end
-
-    def to_kilometers_per_hour
-      @unit = 'kilometers per hour'
-      @value = ->(n) { n * 3.6 }.call(@value)
-    end
-
   end
 end
 
