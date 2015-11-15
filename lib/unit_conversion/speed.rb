@@ -11,17 +11,17 @@ module SpeedConvertor
     end
 
     def from_kilometers_per_hour
-      @unit = 'kilometer per hour'
+      @unit = 'kilometers per hour'
       @value = ->(n) { n * 0.277778}.call(@value)
     end
 
     def from_kilometers_per_second
-      @unit = 'kilometer per second'
+      @unit = 'kilometers per second'
       @value = ->(n) { n * 1000.0 }.call(@value)
     end
 
     def from_miles_per_hour
-      @unit = 'kilometer per second'
+      @unit = 'kilometers per second'
       @value = ->(n) { n * 0.44704 }.call(@value)
     end
 
